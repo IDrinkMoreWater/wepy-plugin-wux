@@ -27,7 +27,7 @@ const getInjectComponents = (globalConfig, pageConfig) => {
     if (typeof globalConfig.inject !== 'boolean')
         globalInject = globalConfig.inject;
 
-    let pageInject = pageConfig.iView;
+    let pageInject = pageConfig.wux;
     return pageInject ? pageInject : globalInject;
 }
 

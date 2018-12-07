@@ -10,16 +10,16 @@ const getPageFilter = (pagePath, fileType) => {
 }
 
 
-const getIviewFilter = (fileType, targetPath = TARGET_DIR_NAME) => {
+const getWuxFilter = (fileType, targetPath = TARGET_DIR_NAME) => {
     return new RegExp(`${targetPath}([\\/]|[\\\\]).*\\.${fileType}$`)
 }
 
 //page filter
 const getPageConfigFilter = (pagePath) => getPageFilter(pagePath, 'json')
 
-// iview filter
-const getIviewWxssFilter = () => getIviewFilter('wxss')
-const getIviewWxmlFilter = () => getIviewFilter('wxml')
+// wux filter
+const getWuxWxssFilter = () => getWuxFilter('wxss')
+const getWuxWxmlFilter = () => getWuxFilter('wxml')
 
 const RPX_RELATIVE = 750;
 
@@ -34,15 +34,15 @@ const getPixelUnitMultiple = (unit, relative) => {
 }
 
 export {
-    getIviewWxssFilter,
+    getWuxWxssFilter,
     getPageConfigFilter,
-    getIviewWxmlFilter,
+    getWuxWxmlFilter,
     getPixelUnitMultiple
 }
 
 export default {
-    getIviewWxssFilter,
+    getWuxWxssFilter,
     getPageConfigFilter,
-    getIviewWxmlFilter,
+    getWuxWxmlFilter,
     getPixelUnitMultiple
 }

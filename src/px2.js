@@ -2,7 +2,7 @@ import postcss from 'postcss';
 import px2units from 'postcss-px2units';
 import { readFileSync } from 'fs';
 import { dirname } from 'path';
-import { getIviewWxssFilter, getPixelUnitMultiple, getIviewWxmlFilter } from './units';
+import { getWuxWxssFilter, getPixelUnitMultiple, getWuxWxmlFilter } from './units';
 
 const EXCLUDE_WXSS = ['icon'];
 const INCLUDE_WXML = ['icon', 'progress'];
@@ -44,8 +44,8 @@ const wxmlPx2 = (op, setting) => {
 
 
 const px2 = async (op, setting) => {
-    let wxssFilter = getIviewWxssFilter();
-    let wxmlFilter = getIviewWxmlFilter();
+    let wxssFilter = getWuxWxssFilter();
+    let wxmlFilter = getWuxWxmlFilter();
 
     if (wxssFilter.test(op.file) && !EXCLUDE_WXSS.includes(dirname(op.file).replace(/^.*([\/]|[\\])/, ''))) {
         op = await wxssPx2(op, setting)

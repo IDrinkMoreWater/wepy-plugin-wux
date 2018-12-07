@@ -20,6 +20,6 @@ module.exports = {
         ]
     },
     plugins: [
-        // new webpack.IgnorePlugin(/require\(\'iview-weapp\/package\.json\')/),
+        // new webpack.IgnorePlugin(/require\(\'wux-weapp\/package\.json\')/),
     ]
 };

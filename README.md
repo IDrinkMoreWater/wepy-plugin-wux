@@ -24,7 +24,7 @@
     // ...
   }
 ```
-4. 运行项目，即可使用wux的全部组件啦~~   如:`<i-button></i-button>`
+4. 运行项目，即可使用wux的全部组件啦~~   如:`<wux-button></wux-button>`
 
 5. `$wuxToast`、`$wuxNotification`的引入
 ```javascript

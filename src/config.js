@@ -1,6 +1,6 @@
 // config
-export const IVIEW_SOURCE_DIR = 'dist'
-export const TARGET_DIR_NAME = 'iView'
+export const WUX_SOURCE_DIR = 'dist'
+export const TARGET_DIR_NAME = 'wux'
 export const VERSION_FILE_NAME = '.version'
 
 export const COMPONENT_IGNORE = {
@@ -10,7 +10,7 @@ export const DEFAULT_CONFIG = {
     pagePath: 'pages',
     config: {
         inject: true,
-        prefix: 'i-',
+        prefix: '',
         px2: {
             relative: 400,
             decimalPlaces: 2,
