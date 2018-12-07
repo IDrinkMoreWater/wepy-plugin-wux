@@ -1,0 +1,50 @@
+{
+  "name": "wepy-plugin-wux",
+  "version": "0.0.1",
+  "description": "A wepy plugin for wux-weapp",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "webpack --mode=development --watch",
+    "build": "webpack --mode=production",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IDrinkMoreWater/wepy-plugin-wux.git"
+  },
+  "keywords": [
+    "wepy",
+    "plugin",
+    "wux",
+    "weapp",
+    "mini",
+    "wechat",
+    "app",
+    "mini-app",
+    "wechat-app"
+  ],
+  "author": "IDrinkMoreWater",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IDrinkMoreWater/wepy-plugin-wux/issues"
+  },
+  "homepage": "https://github.com/IDrinkMoreWater/wepy-plugin-wux#readme",
+  "dependencies": {
+    "postcss-px2units": "^0.1.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "copy-dir": "^0.4.0",
+    "deepmerge": "^2.1.1",
+    "eslint": "^5.3.0",
+    "wux-weapp": "^3.3.0",
+    "upath": "^1.1.0",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
