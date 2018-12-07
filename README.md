@@ -28,7 +28,7 @@
 
 5. `$wuxToast`、`$wuxNotification`的引入
 ```javascript
-    import {$wuxToast, $wuxNotification} from 'wux-weapp'
+    import {$wuxToast, $wuxNotification} from '../wux/index'
 ```
 
 ## 全局注入配置
@@ -74,10 +74,10 @@
 很多情况下，不希望注入太多的组件。可以通过全局配置的`inject:false`或`inject:['button','icon',...]`来实现。
 但是某些特殊的页面又需要一些特殊的组件。可以通过下面的方式设置。
 
-1. 在页面的config中添加 `wux: ['button', 'card']`,即可快速注入。该配置在当前页面，权重高于全局的inject设置
+1. 在页面的config中添加 `wux: ['button', 'toast']`,即可快速注入。该配置在当前页面，权重高于全局的inject设置
 ```javascript
   config = {
-    wux: ['button', 'card']
+    wux: ['button', 'toast']
   }
 
 ```
