@@ -1,5 +1,5 @@
 # wepy-plugin-wux
-> 一个wux-weapp的wepy插件 fork 至 https://github.com/jardenliu/wepy-plugin-iview 原作者：jardenliu
+> 一个wux-weapp的wepy插件，fork自 https://github.com/jardenliu/wepy-plugin-iview 原作者：jardenliu
 
 ## 特性
 * 自动注入
