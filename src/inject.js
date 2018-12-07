@@ -20,7 +20,7 @@ import { normalize } from 'upath';
 
 // 获取需要注入的组件
 const getInjectComponents = (globalConfig, pageConfig) => {
-    let targetPath = join('dist', TARGET_DIR_NAME)
+    let targetPath = join('src', TARGET_DIR_NAME)
     let components = readdirSync(targetPath).filter(component => (!COMPONENT_IGNORE[component] && component != VERSION_FILE_NAME))
 
     let globalInject = globalConfig.inject ? components : [];

@@ -18,8 +18,8 @@ import {
 // 复制WUX的文件到src中
 const copyWuxToSrc = () => {
     let sourcePath = join(WUX_PATH, WUX_SOURCE_DIR)
-    let targetPath = join('dist', TARGET_DIR_NAME)
-    let versionPath = join('dist', TARGET_DIR_NAME, VERSION_FILE_NAME)
+    let targetPath = join('src', TARGET_DIR_NAME)
+    let versionPath = join('src', TARGET_DIR_NAME, VERSION_FILE_NAME)
 
     // 检测src目录下的副本
     if (existsSync(targetPath) && existsSync(versionPath)) {
@@ -35,11 +35,11 @@ const copyWuxToSrc = () => {
 // 添加git忽略
 const addCopyFolderToGitIgnore = () => {
     if (!existsSync('.gitignore')) {
-        writeFileSync('.gitignore', 'dist/' + TARGET_DIR_NAME + '/')
+        writeFileSync('.gitignore', 'src/' + TARGET_DIR_NAME + '/')
     } else {
         let ignore = readFileSync('.gitignore', 'utf-8')
-        if (!ignore.match('dist/' + TARGET_DIR_NAME)) {
-            ignore += '\ndist/' + TARGET_DIR_NAME + '/'
+        if (!ignore.match('src/' + TARGET_DIR_NAME)) {
+            ignore += '\nsrc/' + TARGET_DIR_NAME + '/'
             writeFileSync('.gitignore', ignore)
         }
     }
