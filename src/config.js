@@ -10,7 +10,7 @@ export const DEFAULT_CONFIG = {
     pagePath: 'pages',
     config: {
         inject: true,
-        prefix: '',
+        prefix: 'wux',
         px2: {
             relative: 400,
             decimalPlaces: 2,

@@ -49,8 +49,8 @@
         // inject: false                           不注入任何组件 
         // inject:['button','icon',...]            只注入部分组件
                 
-        prefix: '',
-        // 可选，默认为 '', 组件名前缀。 如果使用其他组件名前缀, 通过此值设置。
+        prefix: 'wux',
+        // 可选，默认为 'wux', 组件名前缀。 如果使用其他组件名前缀, 通过此值设置。
         // 参考配置：
         // prefix: 'a-'                            button的组件名为'a-button'
 
