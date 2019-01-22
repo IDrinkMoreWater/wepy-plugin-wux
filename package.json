@@ -1,6 +1,6 @@
 {
   "name": "wepy-plugin-wux",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A wepy plugin for wux-weapp",
   "main": "dist/index.js",
   "scripts": {

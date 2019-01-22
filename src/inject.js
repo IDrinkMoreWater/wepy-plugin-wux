@@ -50,8 +50,8 @@ const injectComponents = (op, setting) => {
             if(!existsSync('dist/'+TARGET_DIR_NAME+'/'+ component))
                 mkdir.sync('dist/'+TARGET_DIR_NAME+'/'+ component);
             copydir.sync('src/'+TARGET_DIR_NAME+ '/'+component, 'dist/'+TARGET_DIR_NAME+'/'+ component);
-            if(!existsSync('dist/'+TARGET_DIR_NAME+'/index.js'))
-                writeFileSync('dist/'+TARGET_DIR_NAME+'/index.js', readFileSync('src/'+TARGET_DIR_NAME+ '/index.js'));
+            // if(!existsSync('dist/'+TARGET_DIR_NAME+'/index.js'))
+            //     writeFileSync('dist/'+TARGET_DIR_NAME+'/index.js', readFileSync('src/'+TARGET_DIR_NAME+ '/index.js'));
         });
         op.code = JSON.stringify(pageConfig)  //更新文件内容
         op.output && op.output({
