@@ -1,4 +1,7 @@
 import {
+    existsSync,
+    writeFileSync,
+    readFileSync,
     readdirSync
 } from 'fs';
 import {
@@ -12,7 +15,8 @@ import {
     VERSION_FILE_NAME,
     COMPONENT_IGNORE,
 } from './config'
-
+import copydir from 'copy-dir';
+import mkdir from 'mkdir-p';
 import { getPageConfigFilter } from './units';
 import { normalize } from 'upath';
 
@@ -41,8 +45,14 @@ const injectComponents = (op, setting) => {
         let injectComponents = getInjectComponents(globalConfig, pageConfig); // 获取要注入的组件
         let relativePath = relative(dirname(op.file), resolve('dist/')); // 获取相对的路径
         pageConfig.usingComponents = pageConfig.usingComponents || {};
-        injectComponents.forEach(component => (pageConfig.usingComponents[globalConfig.prefix + component] = normalize(relativePath) + '/' + TARGET_DIR_NAME + '/' + component + '/index'))
-
+        injectComponents.forEach(component =>{
+            pageConfig.usingComponents[globalConfig.prefix + component] = normalize(relativePath) + '/' + TARGET_DIR_NAME + '/' + component;
+            if(!existsSync('dist/'+TARGET_DIR_NAME+'/'+ component))
+                mkdir.sync('dist/'+TARGET_DIR_NAME+'/'+ component);
+            copydir.sync('src/'+TARGET_DIR_NAME+ '/'+component, 'dist/'+TARGET_DIR_NAME+'/'+ component);
+            if(!existsSync('dist/'+TARGET_DIR_NAME+'/index.js'))
+                writeFileSync('dist/'+TARGET_DIR_NAME+'/index.js', readFileSync('src/'+TARGET_DIR_NAME+ '/index.js'));
+        });
         op.code = JSON.stringify(pageConfig)  //更新文件内容
         op.output && op.output({
             action: '变更',

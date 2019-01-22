@@ -26,7 +26,6 @@ const copyWuxToSrc = () => {
         let copyVersion = readFileSync(versionPath, 'utf-8')
         if (copyVersion === WUX_VERISON) return // 比对版本
     }
-
     copydir.sync(sourcePath, targetPath) // 复制文件夹
     writeFileSync(versionPath, WUX_VERISON) // 添加版本文件
     addCopyFolderToGitIgnore() // 把复制过去的文件夹添加.gitignore
@@ -41,6 +40,15 @@ const addCopyFolderToGitIgnore = () => {
         if (!ignore.match('src/' + TARGET_DIR_NAME)) {
             ignore += '\nsrc/' + TARGET_DIR_NAME + '/'
             writeFileSync('.gitignore', ignore)
+        }
+    }
+    if (!existsSync('.wepyignore')) {
+        writeFileSync('.wepyignore', '/wux')
+    } else {
+        let ignore = readFileSync('.wepyignore', 'utf-8')
+        if (!ignore.match('/wux')) {
+            ignore += '\n/wux'
+            writeFileSync('.wepyignore', ignore)
         }
     }
 }
