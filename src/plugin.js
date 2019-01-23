@@ -14,9 +14,9 @@ try {
 
 export default class WepyPluginWux {
     constructor(c = {}) {
-        copyWux(); // 拷贝wux到src下
         c = merge(c, { isPx2On: c.config && c.config.px2 })
         this.setting = merge(DEFAULT_CONFIG, c);
+        copyWux(this.setting.config); // 拷贝wux到src下
     }
     apply(op) {
         let setting = this.setting;
