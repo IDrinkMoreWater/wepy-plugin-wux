@@ -40,7 +40,7 @@ const copyWuxToSrc = (globalConfig) => {
     //     let copyVersion = readFileSync(versionPath, 'utf-8')
     //     if (copyVersion === WUX_VERISON) return // 比对版本
     // }
-    writeFileSync(versionPath, WUX_VERISON) // 添加版本文件
+    // writeFileSync(versionPath, WUX_VERISON) // 添加版本文件
     addCopyFolderToGitIgnore() // 把复制过去的文件夹添加.gitignore
 }
 
