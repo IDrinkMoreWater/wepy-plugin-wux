@@ -41,6 +41,8 @@ const injectComponents = (op, setting) => {
         // 将组件注入到json的usingComponents中
         let injectComponents = getInjectComponents(globalConfig, pageConfig); // 获取要注入的组件
         let relativePath = relative(dirname(op.file), resolve('dist/')); // 获取相对的路径
+        //目的是去除wux的配置
+        delete pageConfig.wux
         pageConfig.usingComponents = pageConfig.usingComponents || {};
         injectComponents.forEach(component => (pageConfig.usingComponents[globalConfig.prefix + component] = normalize(relativePath) + '/' + TARGET_DIR_NAME + '/' + component + '/index'))
 
